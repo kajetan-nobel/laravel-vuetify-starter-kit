@@ -14,7 +14,7 @@ defineProps<{
             <VContainer fluid class="d-flex flex-column ga-6 align-center justify-center pa-6 pa-md-10 fill-height" max-width="500">
                 <div class="d-flex flex-column items-center ga-4">
                     <Link :href="route('home')" class="d-flex justify-center text-h5">
-                        <AppLogoIcon class="text-white" />
+                        <AppLogoIcon class="on-surface" />
                         <span class="d-sr-only">{{ title }}</span>
                     </Link>
                     <div class="text-center my-2">

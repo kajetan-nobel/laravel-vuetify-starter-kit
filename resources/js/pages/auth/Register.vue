@@ -22,10 +22,9 @@ const submit = () => {
         <Head title="Register" />
 
         <form @submit.prevent="submit" class="d-flex flex-column ga-6">
-            <div class="d-flex flex-column ga-2">
+            <div class="d-flex flex-column ga-4">
                 <VTextField
-                    id="email"
-                    type="email"
+                    id="name"
                     required
                     autofocus
                     :tabindex="1"

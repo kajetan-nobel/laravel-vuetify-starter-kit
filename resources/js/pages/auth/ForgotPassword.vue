@@ -24,7 +24,7 @@ const submit = () => {
             <div v-if="status" class="text-center font-weight-medium text-green">
                 {{ status }}
             </div>
-            <div class="d-flex flex-column ga-2">
+            <div class="d-flex flex-column ga-4">
                 <VTextField
                     id="email"
                     type="email"

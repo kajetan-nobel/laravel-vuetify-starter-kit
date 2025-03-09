@@ -119,7 +119,13 @@ const { getInitials } = useInitials();
                 </VMenu>
             </template>
         </VNavigationDrawer>
-        <VAppBar />
+        <VAppBar flat :extension-height="1">
+            <VBreadcrumbs :items="breadcrumbs" />
+
+            <template #extension>
+                <VDivider />
+            </template>
+        </VAppBar>
         <VMain>
             <VContainer fluid class="h-100">
                 <slot />
