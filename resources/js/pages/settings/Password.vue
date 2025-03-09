@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import InputError from '@/components/InputError.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import SettingsLayout from '@/layouts/settings/Layout.vue';
 import { TransitionRoot } from '@headlessui/vue';
@@ -7,9 +6,6 @@ import { Head, useForm } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
 import HeadingSmall from '@/components/HeadingSmall.vue';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { type BreadcrumbItem } from '@/types';
 
 const breadcrumbItems: BreadcrumbItem[] = [
@@ -56,53 +52,44 @@ const updatePassword = () => {
         <Head title="Password settings" />
 
         <SettingsLayout>
-            <div class="space-y-6">
+            <div class="d-flex flex-column ga-4">
                 <HeadingSmall title="Update password" description="Ensure your account is using a long, random password to stay secure" />
 
-                <form @submit.prevent="updatePassword" class="space-y-6">
-                    <div class="grid gap-2">
-                        <Label for="current_password">Current password</Label>
-                        <Input
-                            id="current_password"
-                            ref="currentPasswordInput"
-                            v-model="form.current_password"
-                            type="password"
-                            class="mt-1 block w-full"
-                            autocomplete="current-password"
-                            placeholder="Current password"
-                        />
-                        <InputError :message="form.errors.current_password" />
-                    </div>
+                <form @submit.prevent="updatePassword" class="d-flex flex-column ga-4">
+                    <VTextField
+                        id="currentPassword"
+                        type="password"
+                        ref="currentPasswordInput"
+                        autocomplete="current-password"
+                        placeholder="Current password"
+                        v-model="form.current_password"
+                        label="Current password"
+                        :error-messages="form.errors.current_password"
+                    />
 
-                    <div class="grid gap-2">
-                        <Label for="password">New password</Label>
-                        <Input
-                            id="password"
-                            ref="passwordInput"
-                            v-model="form.password"
-                            type="password"
-                            class="mt-1 block w-full"
-                            autocomplete="new-password"
-                            placeholder="New password"
-                        />
-                        <InputError :message="form.errors.password" />
-                    </div>
+                    <VTextField
+                        id="password"
+                        type="password"
+                        ref="passwordInput"
+                        autocomplete="new-password"
+                        placeholder="New password"
+                        v-model="form.password"
+                        label="Password"
+                        :error-messages="form.errors.password"
+                    />
 
-                    <div class="grid gap-2">
-                        <Label for="password_confirmation">Confirm password</Label>
-                        <Input
-                            id="password_confirmation"
-                            v-model="form.password_confirmation"
-                            type="password"
-                            class="mt-1 block w-full"
-                            autocomplete="new-password"
-                            placeholder="Confirm password"
-                        />
-                        <InputError :message="form.errors.password_confirmation" />
-                    </div>
+                    <VTextField
+                        id="passwordConfirmation"
+                        type="password"
+                        autocomplete="new-password"
+                        placeholder="Confirm password"
+                        v-model="form.password_confirmation"
+                        label="Confirm password"
+                        :error-messages="form.errors.password_confirmation"
+                    />
 
-                    <div class="flex items-center gap-4">
-                        <Button :disabled="form.processing">Save password</Button>
+                    <div class="d-flex align-center ga-4">
+                        <VBtn color="primary" type="submit" :disabled="form.processing" :loading="form.processing" text="Save" />
 
                         <TransitionRoot
                             :show="form.recentlySuccessful"
@@ -111,7 +98,7 @@ const updatePassword = () => {
                             leave="transition ease-in-out"
                             leave-to="opacity-0"
                         >
-                            <p class="text-sm text-neutral-600">Saved</p>
+                            <p class="text-body-2 text-grey-darken-1">Saved.</p>
                         </TransitionRoot>
                     </div>
                 </form>

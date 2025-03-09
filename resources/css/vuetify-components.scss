@@ -1,0 +1,6 @@
+@use 'variables';
+
+@forward 'vuetify/settings' with (
+    $body-font-family: variables.$body-font-family,
+    $typography: variables.$typography
+);

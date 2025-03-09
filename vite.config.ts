@@ -1,10 +1,9 @@
 import vue from '@vitejs/plugin-vue';
-import autoprefixer from 'autoprefixer';
 import laravel from 'laravel-vite-plugin';
 import path from 'path';
-import tailwindcss from 'tailwindcss';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
+import vuetify from 'vite-plugin-vuetify';
 
 export default defineConfig({
     plugins: [
@@ -21,16 +20,17 @@ export default defineConfig({
                 },
             },
         }),
+        vuetify({
+            autoImport: true,
+            styles: {
+                configFile: 'resources/css/vuetify-components.scss',
+            }
+        }),
     ],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './resources/js'),
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
-        },
-    },
-    css: {
-        postcss: {
-            plugins: [tailwindcss, autoprefixer],
         },
     },
 });
