@@ -22,6 +22,9 @@ export default defineConfig({
         }),
         vuetify({
             autoImport: true,
+            styles: {
+                configFile: 'resources/css/vuetify-components.scss',
+            }
         }),
     ],
     resolve: {

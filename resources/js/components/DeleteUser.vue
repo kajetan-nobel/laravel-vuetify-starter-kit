@@ -45,7 +45,10 @@ const closeModal = () => {
                 <VDialogContent>
                     <form class="space-y-6" @submit="deleteUser">
                         <div class="space-y-3">
-                            <p>Once your account is deleted, all of its resources and data will also be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.</p>
+                            <p>
+                                Once your account is deleted, all of its resources and data will also be permanently deleted. Please enter your
+                                password to confirm you would like to permanently delete your account.
+                            </p>
                         </div>
 
                         <div class="grid gap-2">

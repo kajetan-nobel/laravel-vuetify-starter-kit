@@ -9,23 +9,23 @@ defineProps<{
 </script>
 
 <template>
-    <div class="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10">
-        <div class="w-full max-w-sm">
-            <div class="flex flex-col gap-8">
-                <div class="flex flex-col items-center gap-4">
-                    <Link :href="route('home')" class="flex flex-col items-center gap-2 font-medium">
-                        <div class="mb-1 flex h-9 w-9 items-center justify-center rounded-md">
-                            <AppLogoIcon class="size-9 fill-current text-[var(--foreground)] dark:text-white" />
-                        </div>
-                        <span class="sr-only">{{ title }}</span>
+    <VApp>
+        <VMain>
+            <VContainer fluid class="d-flex flex-column ga-6 align-center justify-center pa-6 pa-md-10 fill-height" max-width="500">
+                <div class="d-flex flex-column items-center ga-4">
+                    <Link :href="route('home')" class="d-flex justify-center text-h5">
+                        <AppLogoIcon class="text-white" />
+                        <span class="d-sr-only">{{ title }}</span>
                     </Link>
-                    <div class="space-y-2 text-center">
-                        <h1 class="text-xl font-medium">{{ title }}</h1>
-                        <p class="text-center text-sm text-muted-foreground">{{ description }}</p>
+                    <div class="text-center my-2">
+                        <h1 class="text-h6 font-weight-bold">{{ title }}</h1>
+                        <p class="text-center text-grey-darken-1">{{ description }}</p>
                     </div>
                 </div>
-                <slot />
-            </div>
-        </div>
-    </div>
+                <VCard variant="flat" color="transparent" width="100%">
+                    <slot />
+                </VCard>
+            </VContainer>
+        </VMain>
+    </VApp>
 </template>

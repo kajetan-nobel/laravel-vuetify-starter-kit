@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import AppLogo from '@/components/AppLogo.vue';
-import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import UserMenuContent from '@/components/UserMenuContent.vue';
 import { getInitials } from '@/composables/useInitials';
 import type { BreadcrumbItem, NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'vuetify/lib/components';
 import { computed } from 'vue';
+import { BookOpen, Folder, LayoutGrid } from 'vuetify/lib/components';
 
 interface Props {
     breadcrumbs?: BreadcrumbItem[];

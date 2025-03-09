@@ -1,13 +1,12 @@
-import '../css/app.css';
-
+import routerLinkPlugin from '@/plugins/routelink';
+import vuetifyPlugin from '@/plugins/vuetify';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from 'ziggy-js';
-import { initializeTheme } from './composables/useAppearance';
-import { createVuetify } from 'vuetify';
-import 'vuetify/styles';
+
+import '../css/app.scss';
 
 // Extend ImportMeta interface for Vite...
 declare module 'vite/client' {
@@ -24,8 +23,6 @@ declare module 'vite/client' {
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-const vuetify = createVuetify();
-
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob<DefineComponent>('./pages/**/*.vue')),
@@ -33,13 +30,11 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .use(vuetify)
+            .use(vuetifyPlugin)
+            .use(routerLinkPlugin)
             .mount(el);
     },
     progress: {
         color: '#4B5563',
     },
 });
-
-// This will set light / dark mode on page load...
-initializeTheme();

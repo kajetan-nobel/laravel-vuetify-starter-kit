@@ -3,10 +3,10 @@ import AppLogoIcon from '@/components/AppLogoIcon.vue';
 </script>
 
 <template>
-    <VAvatar class="size-8">
-        <VImg src="path/to/logo.png" alt="App Logo" />
-    </VAvatar>
-    <div class="ml-1 grid flex-1 text-left text-sm">
-        <span class="mb-0.5 truncate font-semibold leading-none">Laravel Starter Kit</span>
+    <div class="d-flex align-center ga-4">
+        <div class="flex aspect-square size-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+            <AppLogoIcon class="size-5 fill-current text-white dark:text-black" />
+        </div>
+        <span class="text-truncate font-weight-bold text-body-2">Laravel Starter Kit</span>
     </div>
 </template>

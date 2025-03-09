@@ -1,4 +1,4 @@
-# Laravel + Vue Starter Kit
+# Laravel + Vue (with Vuetify) Starter Kit
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Our Vue starter kit provides a robust, modern starting point for building Larave
 
 Inertia allows you to build modern, single-page Vue applications using classic server-side routing and controllers. This lets you enjoy the frontend power of Vue combined with the incredible backend productivity of Laravel and lightning-fast Vite compilation.
 
-This Vue starter kit utilizes Vue 3 and the Composition API, TypeScript, Tailwind, and the [shadcn-vue](https://www.shadcn-vue.com) component library.
+This Vue starter kit utilizes Vue 3 and the Composition API, TypeScript, and the [Vuetify](https://vuetifyjs.com) component library.
 
 ## Official Documentation
 
@@ -22,4 +22,4 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 ## License
 
-The Laravel + Vue starter kit is open-sourced software licensed under the MIT license.
+The Laravel + Vue (with Vuetify) starter kit is open-sourced software licensed under the MIT license.
