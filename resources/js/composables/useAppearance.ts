@@ -21,7 +21,6 @@ export function useAppearance() {
 
     onMounted(() => {
         const savedAppearance = localStorage.getItem('appearance') as Appearance | null;
-        console.log('savedAppearance', savedAppearance);
 
         if (savedAppearance) {
             appearance.value = savedAppearance;
