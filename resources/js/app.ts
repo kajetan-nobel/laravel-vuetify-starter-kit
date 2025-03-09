@@ -1,3 +1,4 @@
+import { useAppearance } from '@/composables/useAppearance';
 import routerLinkPlugin from '@/plugins/routelink';
 import vuetifyPlugin from '@/plugins/vuetify';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -26,7 +27,12 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob<DefineComponent>('./pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
+        createApp({
+            render: () => h(App, props),
+            setup() {
+                useAppearance();
+            },
+        })
             .use(plugin)
             .use(ZiggyVue)
             .use(vuetifyPlugin)

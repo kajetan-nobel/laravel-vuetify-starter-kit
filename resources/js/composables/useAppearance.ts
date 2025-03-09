@@ -1,5 +1,5 @@
 import { usePreferredColorScheme } from '@vueuse/core';
-import { onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useTheme } from 'vuetify';
 
 type Appearance = 'light' | 'dark' | 'system';
@@ -21,6 +21,7 @@ export function useAppearance() {
 
     onMounted(() => {
         const savedAppearance = localStorage.getItem('appearance') as Appearance | null;
+        console.log('savedAppearance', savedAppearance);
 
         if (savedAppearance) {
             appearance.value = savedAppearance;
@@ -37,10 +38,17 @@ export function useAppearance() {
         setCookie('appearance', value);
     }
 
-    watch(appearance, () => (theme.global.name.value = appearance.value === 'system' ? auto.value : appearance.value), { immediate: true });
+    const computedAppearance = computed(() => (appearance.value === 'system' ? auto.value : appearance.value));
+    const isDark = computed(() => computedAppearance.value === 'dark');
+    const isLight = computed(() => computedAppearance.value === 'light');
+
+    watch(appearance, () => (theme.global.name.value = computedAppearance.value), { immediate: true });
 
     return {
         appearance,
         updateAppearance,
+        computedAppearance,
+        isDark,
+        isLight,
     };
 }
