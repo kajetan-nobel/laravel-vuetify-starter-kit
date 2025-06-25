@@ -4,7 +4,6 @@ import HeadingSmall from '@/components/HeadingSmall.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import SettingsLayout from '@/layouts/settings/Layout.vue';
 import { type BreadcrumbItem, type User } from '@/types';
-import { TransitionRoot } from '@headlessui/vue';
 import { Head, router, useForm, usePage } from '@inertiajs/vue3';
 
 interface Props {
@@ -96,8 +95,8 @@ const submit = () => {
                             leave-active-class="transition ease-in-out"
                             leave-to-class="opacity-0"
                         >
-                            <p class="text-body-2 text-grey-darken-1">Saved.</p>
-                        </TransitionRoot>
+                            <p v-show="form.recentlySuccessful" class="text-body-2 text-grey-darken-1">Saved.</p>
+                        </Transition>
                     </div>
                 </form>
 

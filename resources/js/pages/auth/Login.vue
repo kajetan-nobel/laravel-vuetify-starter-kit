@@ -54,7 +54,7 @@ const submit = () => {
                     :error-messages="form.errors.password"
                 />
                 <div class="d-flex align-center flex-wrap ga-2">
-                    <VCheckbox id="remember" v-model:checked="form.remember" :tabindex="3" label="Remember me" hide-details />
+                    <VCheckbox id="remember" v-model="form.remember" :tabindex="3" label="Remember me" hide-details />
                     <div class="text-right flex-grow-1">
                         <TextLink v-if="canResetPassword" :href="route('password.request')" :tabindex="5">Forgot password?</TextLink>
                     </div>

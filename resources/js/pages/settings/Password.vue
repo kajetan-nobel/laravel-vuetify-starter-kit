@@ -96,8 +96,8 @@ const updatePassword = () => {
                             leave-active-class="transition ease-in-out"
                             leave-to-class="opacity-0"
                         >
-                            <p class="text-body-2 text-grey-darken-1">Saved.</p>
-                        </TransitionRoot>
+                            <p v-show="form.recentlySuccessful" class="text-body-2 text-grey-darken-1">Saved.</p>
+                        </Transition>
                     </div>
                 </form>
             </div>
