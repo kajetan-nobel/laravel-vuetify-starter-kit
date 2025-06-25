@@ -3,7 +3,7 @@ import DeleteUser from '@/components/DeleteUser.vue';
 import HeadingSmall from '@/components/HeadingSmall.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import SettingsLayout from '@/layouts/settings/Layout.vue';
-import { type BreadcrumbItem, type SharedData, type User } from '@/types';
+import { type BreadcrumbItem, type User } from '@/types';
 import { TransitionRoot } from '@headlessui/vue';
 import { Head, router, useForm, usePage } from '@inertiajs/vue3';
 
@@ -21,7 +21,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-const page = usePage<SharedData>();
+const page = usePage();
 const user = page.props.auth.user as User;
 
 const form = useForm({
