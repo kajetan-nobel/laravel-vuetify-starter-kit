@@ -1,29 +1,28 @@
 <script setup lang="ts">
-import PlaceholderPattern from '@/components/PlaceholderPattern.vue';
-import AppLayout from '@/layouts/AppLayout.vue';
-import { type BreadcrumbItem } from '@/types';
-import { Head } from '@inertiajs/vue3';
+import PlaceholderPattern from '@/components/PlaceholderPattern.vue'
+import AppLayout from '@/layouts/AppLayout.vue'
+import { type BreadcrumbItem } from '@/types'
 
 const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Dashboard',
-        href: '/dashboard',
-    },
-];
+  {
+    title: 'Dashboard',
+    href: '/dashboard',
+  },
+]
 </script>
 
 <template>
-    <Head title="Dashboard" />
+  <inertia-head title="Dashboard" />
 
-    <AppLayout :breadcrumbs="breadcrumbs">
-        <div class="d-flex flex-column ga-4 h-100">
-            <div class="d-flex flex-wrap ga-4">
-                <PlaceholderPattern class="flex-grow-1" />
-                <PlaceholderPattern class="flex-grow-1" />
-                <PlaceholderPattern class="flex-grow-1" />
-            </div>
+  <app-layout :breadcrumbs="breadcrumbs">
+    <div class="d-flex flex-column ga-4 h-100">
+      <div class="d-flex flex-wrap ga-4">
+        <placeholder-pattern class="flex-grow-1" />
+        <placeholder-pattern class="flex-grow-1" />
+        <placeholder-pattern class="flex-grow-1" />
+      </div>
 
-            <PlaceholderPattern class="flex-grow-1" />
-        </div>
-    </AppLayout>
+      <placeholder-pattern class="flex-grow-1" />
+    </div>
+  </app-layout>
 </template>

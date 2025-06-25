@@ -1,5 +1,5 @@
-import type { Plugin } from 'vue';
-import { createVuetify, VuetifyOptions } from 'vuetify';
+import type { Plugin } from 'vue'
+import { createVuetify, VuetifyOptions } from 'vuetify'
 
 const config: Partial<VuetifyOptions> = {
     defaults: {
@@ -60,13 +60,13 @@ const config: Partial<VuetifyOptions> = {
             },
         },
     },
-};
+}
 
 const plugin: Plugin = {
     install(app) {
-        const vuetify = createVuetify(config);
-        app.use(vuetify);
+        const vuetify = createVuetify(config)
+        app.use(vuetify)
     },
-};
+}
 
-export default plugin;
+export default plugin

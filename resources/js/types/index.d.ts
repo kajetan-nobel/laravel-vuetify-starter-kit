@@ -1,5 +1,4 @@
-import type { LucideIcon } from 'lucide-vue-next';
-import type { Config } from 'ziggy-js';
+import type { Config } from 'ziggy-js'
 
 export interface Auth {
     user: User;
@@ -8,13 +7,6 @@ export interface Auth {
 export interface BreadcrumbItem {
     title: string;
     href: string;
-}
-
-export interface NavItem {
-    title: string;
-    href: string;
-    icon?: LucideIcon;
-    isActive?: boolean;
 }
 
 export type AppPageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {

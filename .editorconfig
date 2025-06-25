@@ -14,5 +14,17 @@ trim_trailing_whitespace = false
 [*.{yml,yaml}]
 indent_size = 2
 
-[docker-compose.yml]
+[*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue,json}]
+indent_size = 2
+
+[*.{scss,sass,css}]
+indent_size = 2
+
+[*.blade.php]
+indent_size = 2
+
+[{compose.yml,compose.*.yml}]
+indent_size = 2
+
+[composer.json]
 indent_size = 4
